@@ -3,17 +3,28 @@
 
 ## Local Setup
 ```
-1. Install python3 from <a href="https://www.python.org/" target="_blank">here</a>
-1. pip install -r requirements.txt
-1. python manage.py migrate
-1. python manage.py createsuperuser(type username and password)
-1. python manage.py runserver
+1. git clone https://github.com/ag602/FoodApi.git
+2. pip install -r requirements.txt
+3. python manage.py migrate
+4. python manage.py createsuperuser(type username and password)
+5. python manage.py runserver
+```
+
+## LIBRARIES/FRAMEWORKS USED
+1. Django - [Django](https://www.djangoproject.com)
+2. For auth and refresh tokens - [Simple JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest)
+
+
+## RUN INSTRUCTIONS
+```
+1. Create user from auth/register/
+2. Get access token from auth/login/
+3. Test the API using POSTMAN/httpie or CURL using the authorization token
 ```
 
 # API Paths
 * [**api/v1/**](#apiv1)
 	* [**api/v1/foodapi/**](#apiv1foodapi)
-
 
 
 * [**auth/**](#auth)
@@ -37,7 +48,7 @@ ___
 <br>**fields :** 'required': {'username', 'password'}
 <br>*POST :* the data you post should include 'username' and 'password' fields if the user was authorized the access token and the refresh token will return as json - [More information about JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html#usage)
 
-#### auth/login/refresh/
+### auth/login/refresh/
 **allowed methods** : POST
 <br>**Access Level** : Public
 <br>**fields :** 'required': {'refresh'}
