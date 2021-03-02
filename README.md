@@ -1,7 +1,7 @@
-# FoodApi
+# FoodApi - [Link](https://ag602.pythonanywhere.com/)
 
 
-## Local Setup
+## LOCAL SETUP
 ```
 1. git clone https://github.com/ag602/FoodApi.git
 2. pip install -r requirements.txt
@@ -19,7 +19,7 @@
 ```
 1. Create user from auth/register/
 2. Get access token from auth/login/
-3. Test the API using POSTMAN/httpie or CURL using the authorization token
+3. Test the API on api/v1/foodapi/ using POSTMAN/httpie or CURL using the authorization token
 ```
 
 # API Paths

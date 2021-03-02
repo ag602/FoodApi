@@ -17,6 +17,9 @@ class foodApi(APIView):
         url = "https://jsonplaceholder.typicode.com/posts"
         response = requests.get(url)
         data = response.json()
-        print(data)
-        return Response(data, status=200)
+        new_dict = {}
+        for i, j in enumerate(data):
+            new_dict[i] = j
+        print(new_dict)
+        return Response(new_dict, status=200)
 
