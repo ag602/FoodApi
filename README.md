@@ -20,6 +20,8 @@
 1. Create user from auth/register/
 2. Get access token from auth/login/
 3. Test the api on api/v1/foodapi/ using the access token
+Note - Refresh token expires in 1 day and Access token expires in 5 minutes.
+
 ```
 
 # API Paths
@@ -62,5 +64,5 @@ ___
 
 
 # Future Work:
-- [o] add CORS and configurations
-- [o] Filter ojects by userid from given api
+- [] add CORS and configurations
+- [] Filter ojects by userid from given api
