@@ -7,9 +7,9 @@ router = routers.DefaultRouter()
 
 
 urlpatterns = [
-
-    path('v1/', include(router.urls)),
-    path('v1/foodapi/', views.foodApi.as_view()),
+    path('', views.home),
+    path('api/v1/', include(router.urls)),
+    path('api/v1/foodapi/', views.foodApi.as_view()),
 
 ]
 

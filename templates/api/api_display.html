@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<h3>Fill the form</h3>
+
+<div class="container">
+    <div class="content">
+        <p style="color: red">
+            {% if error == '0' %}
+                Token expired. Go to - <a href="/auth/login/refresh">Link</a> and enter refresh token to generate a new pair of token
+            {% elif error == '1' %}
+                Invalid Token. Go to - <a href="/auth/register">Link</a> to register a new account <b>OR</b>
+                Go to - <a href="/auth/login/refresh">Link</a> to renew the token
+            {% endif %}
+        </p>
+    </div>
+  <form method="post">
+      {% csrf_token %}
+    <label for="token">Enter access token</label>
+    <input type="text" id="token" name="token" placeholder="Access Token">
+    <input type="submit" value="Submit" name="submit">
+  </form>
+
+
+</div>
+<div class="container">
+
+   <table class="w3-table-all w3-hoverable">
+    <thead>
+      <tr class="w3-light-grey">
+        <th>UserId</th>
+        <th>id</th>
+        <th>Title</th>
+        <th>Body</th>
+      </tr>
+    </thead>
+       {% for i in data %}
+    <tr>
+      <td>{{ i.userId }}</td>
+        <td>{{ i.id }}</td>
+        <td>{{ i.title }}</td>
+        <td>{{ i.body }}</td>
+    </tr>
+       {% endfor %}
+
+  </table>
+
+</div>
+</body>
+</html>

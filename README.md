@@ -12,14 +12,14 @@
 
 ## LIBRARIES/FRAMEWORKS USED
 1. Django - [Django](https://www.djangoproject.com)
-2. For auth and refresh tokens - [Simple JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest)
+2. For access and refresh tokens - [Simple JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest)
 
 
 ## RUN INSTRUCTIONS
 ```
 1. Create user from auth/register/
 2. Get access token from auth/login/
-3. Test the API on api/v1/foodapi/ using POSTMAN/httpie or CURL using the authorization token
+3. Test the api on api/v1/foodapi/ using the access token
 ```
 
 # API Paths
@@ -36,7 +36,7 @@
 ___	
 ## api/v1/
 ### api/v1/foodapi/
-**Allowed Methods** : GET
+**Allowed Methods** : GET, POST
 <br>**Access Level** : Authorized
 <br>return a json object of all products available on the website - [Link](https://jsonplaceholder.typicode.com/posts)
 
@@ -46,13 +46,13 @@ ___
 **allowed methods** : POST
 <br>**Access Level** : Public
 <br>**fields :** 'required': {'username', 'password'}
-<br>*POST :* the data you post should include 'username' and 'password' fields if the user was authorized the access token and the refresh token will return as json - [More information about JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html#usage)
+<br>*POST :* The data you post should include 'username' and 'password' fields if the user was authorized the access token and the refresh token will return as json - [More information about JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html#usage)
 
 ### auth/login/refresh/
 **allowed methods** : POST
 <br>**Access Level** : Public
 <br>**fields :** 'required': {'refresh'}
-<br>*POST :* the data you post should include 'refresh' and the value of it should be user refresh token that is sent when user login.
+<br>*POST :* The data you post should include 'refresh' and the value of it should be user refresh token that is sent when user login.
 
 ### auth/register/
 **allowed methods** : POST
@@ -62,6 +62,5 @@ ___
 
 
 # Future Work:
-- [x] add users and configurations
-- [x] add CORS and configurations
-- [x] Filter ojects by userid from given api
+- [o] add CORS and configurations
+- [o] Filter ojects by userid from given api
